@@ -76,6 +76,22 @@ env.development
 env.test
 env.production
 
+# Environment files in subdirectories
+*/env.local
+*/env.development
+*/env.test
+*/env.production
+*/.env
+*/.env.*
+*/.env.local
+*/.env.development
+*/.env.test
+*/.env.production
+env.local
+env.development
+env.test
+env.production
+
 # parcel-bundler cache (https://parceljs.org/)
 .cache
 .parcel-cache

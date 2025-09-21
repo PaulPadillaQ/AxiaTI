@@ -27,7 +27,7 @@ cp env.example .env
 ### 2. Frontend
 ```bash
 cd frontend
-cp env.local .env.local
+cp env.example .env.local
 # Editar .env.local con tus credenciales reales
 ```
 
