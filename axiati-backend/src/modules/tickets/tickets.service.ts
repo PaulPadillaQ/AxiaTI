@@ -1,7 +1,7 @@
 import { Injectable, NotFoundException, ForbiddenException } from '@nestjs/common';
 import { CreateTicketDto } from './dto/create-ticket.dto';
 import { UpdateTicketDto } from './dto/update-ticket.dto';
-import { Role } from '../../common/decorators/roles.decorator';
+import { Role } from '../auth/dto/auth.dto';
 
 @Injectable()
 export class TicketsService {

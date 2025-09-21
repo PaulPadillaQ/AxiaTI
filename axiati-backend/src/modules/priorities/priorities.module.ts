@@ -1,10 +1,11 @@
 import { Module } from '@nestjs/common';
+import { TypeOrmModule } from '@nestjs/typeorm';
 import { PrioritiesController } from './priorities.controller';
 import { PrioritiesService } from './priorities.service';
-import { DatabaseModule } from '../../database/database.module';
+import { Priority } from '../../entities/priority.entity';
 
 @Module({
-  imports: [DatabaseModule],
+  imports: [TypeOrmModule.forFeature([Priority])],
   controllers: [PrioritiesController],
   providers: [PrioritiesService],
   exports: [PrioritiesService],

@@ -15,7 +15,7 @@ import { CreateUserDto } from './dto/create-user.dto';
 import { UpdateUserDto } from './dto/update-user.dto';
 import { JwtAuthGuard } from '../../common/guards/jwt-auth.guard';
 import { Roles } from '../../common/decorators/roles.decorator';
-import { Role } from '../../common/decorators/roles.decorator';
+import { Role } from '../auth/dto/auth.dto';
 
 @ApiTags('Users')
 @Controller('users')

@@ -16,7 +16,7 @@ import { CreateTicketDto } from './dto/create-ticket.dto';
 import { UpdateTicketDto } from './dto/update-ticket.dto';
 import { JwtAuthGuard } from '../../common/guards/jwt-auth.guard';
 import { Roles } from '../../common/decorators/roles.decorator';
-import { Role } from '../../common/decorators/roles.decorator';
+import { Role } from '../auth/dto/auth.dto';
 import { CurrentUser } from '../../common/decorators/current-user.decorator';
 
 @ApiTags('Tickets')
@@ -41,13 +41,13 @@ export class TicketsController {
   @ApiOperation({ summary: 'Obtener lista de tickets' })
   @ApiResponse({ status: 200, description: 'Lista de tickets obtenida exitosamente' })
   async findAll(
+    @CurrentUser() user: any,
     @Query('page') page: number = 1,
     @Query('limit') limit: number = 10,
     @Query('status') status?: string,
     @Query('priority') priority?: string,
     @Query('category') category?: string,
     @Query('assignedTo') assignedTo?: string,
-    @CurrentUser() user: any,
   ) {
     return this.ticketsService.findAll({
       page,
