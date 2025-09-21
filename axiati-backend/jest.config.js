@@ -1,0 +1,27 @@
+module.exports = {
+  displayName: 'axia-ti-backend',
+  preset: 'ts-jest',
+  testEnvironment: 'node',
+  rootDir: '.',
+  testMatch: ['<rootDir>/src/**/*.spec.ts'],
+  collectCoverageFrom: [
+    'src/**/*.(t|j)s',
+    '!src/**/*.spec.ts',
+    '!src/**/*.interface.ts',
+    '!src/**/*.dto.ts',
+    '!src/**/*.entity.ts',
+    '!src/main.ts',
+  ],
+  coverageDirectory: 'coverage',
+  coverageReporters: ['text', 'lcov', 'html'],
+  setupFilesAfterEnv: ['<rootDir>/test/setup.ts'],
+  moduleNameMapping: {
+    '^@/(.*)$': '<rootDir>/src/$1',
+    '^@/common/(.*)$': '<rootDir>/src/common/$1',
+    '^@/config/(.*)$': '<rootDir>/src/config/$1',
+    '^@/database/(.*)$': '<rootDir>/src/database/$1',
+    '^@/modules/(.*)$': '<rootDir>/src/modules/$1',
+    '^@/shared/(.*)$': '<rootDir>/src/shared/$1',
+  },
+  testTimeout: 10000,
+};
